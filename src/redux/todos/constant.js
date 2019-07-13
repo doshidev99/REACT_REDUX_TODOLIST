@@ -1,0 +1,7 @@
+export const TODO = {
+  GET: "GET_TODO_LIST",
+  ADD: "ADD_TODO",
+  REMOVE: "REMOVE_TODO",
+  EDIT: "EDIT_TODO",
+  TOGGLE: "TOGGLE_TODO"
+};
