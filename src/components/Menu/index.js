@@ -7,6 +7,7 @@ import Footer from '../Footer';
 const Menu = () => {
   return (
     <Fragment>
+      Hello
       <AddTodo />
       <VisibleTodoList />
       <Footer />

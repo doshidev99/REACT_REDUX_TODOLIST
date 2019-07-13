@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import {
-  addTodo,
-  getTodoList
-} from '../redux/todos/action';
+import { addTodo, getTodoList } from '../redux/todos/action';
 
 const AddTodo = ({ getTodoList, addTodo }) => {
   let input;
@@ -11,7 +8,7 @@ const AddTodo = ({ getTodoList, addTodo }) => {
     if (!localStorage.getItem('todos')) {
       localStorage.setItem('todos', JSON.stringify([]));
     } else {
-      let array = JSON.parse(localStorage.getItem('todos'));
+      const array = JSON.parse(localStorage.getItem('todos'));
       getTodoList(array);
     }
   });
@@ -25,9 +22,9 @@ const AddTodo = ({ getTodoList, addTodo }) => {
         {
           id: Date.now(),
           text: input.value,
-          completed: false
+          completed: false,
         },
-        ...array
+        ...array,
       ];
       localStorage.setItem('todos', JSON.stringify(array));
       addTodo(input.value);
@@ -52,6 +49,6 @@ export default connect(
     },
     getTodoList: array => {
       dispatch(getTodoList(array));
-    }
-  })
+    },
+  }),
 )(AddTodo);

@@ -1,4 +1,4 @@
-import { TODO } from "./constant";
+import { TODO } from './constant';
 
 export default (state = [], action) => {
   switch (action.type) {
@@ -9,21 +9,17 @@ export default (state = [], action) => {
         {
           id: action.id,
           text: action.text,
-          completed: false
+          completed: false,
         },
-        ...state
+        ...state,
       ];
     case TODO.EDIT:
-      let text = action.updates;
-      return state.map(todo =>
-        todo.id === action.id ? { ...todo, text } : todo
-      );
+      const text = action.updates;
+      return state.map(todo => (todo.id === action.id ? { ...todo, text } : todo));
     case TODO.REMOVE:
       return state.filter(todo => todo.id !== action.id);
     case TODO.TOGGLE:
-      return state.map(todo =>
-        todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
-      );
+      return state.map(todo => todo.id === action.id ? { ...todo, completed: !todo.completed } : todo);
     default:
       return state;
   }
