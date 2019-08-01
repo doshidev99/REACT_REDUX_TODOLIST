@@ -1,10 +1,10 @@
-import { FILTER } from "./constant";
+import { FilterTypes } from './actions';
+import { makeReducerCreator } from '../../utils/reduxUtils';
 
-export default (state = "SHOW_ALL", action) => {
-  switch (action.type) {
-    case FILTER:
-      return action.filter;
-    default:
-      return state;
-  }
-};
+export const initialState = 'SHOW_ALL';
+
+export const setVisibilityFilter = (state, { filter }) => filter;
+
+export default makeReducerCreator(initialState, {
+  [FilterTypes.SET_VISIBILITY_FILTER]: setVisibilityFilter,
+});

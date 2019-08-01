@@ -1,26 +1,29 @@
-import { TODO } from './constant';
+import { TodoTypes } from './actions';
+import { makeReducerCreator } from '../../utils/reduxUtils';
 
-export default (state = [], action) => {
-  switch (action.type) {
-    case TODO.GET:
-      return [...action.array];
-    case TODO.ADD:
-      return [
-        {
-          id: action.id,
-          text: action.text,
-          completed: false,
-        },
-        ...state,
-      ];
-    case TODO.EDIT:
-      const text = action.updates;
-      return state.map(todo => (todo.id === action.id ? { ...todo, text } : todo));
-    case TODO.REMOVE:
-      return state.filter(todo => todo.id !== action.id);
-    case TODO.TOGGLE:
-      return state.map(todo => todo.id === action.id ? { ...todo, completed: !todo.completed } : todo);
-    default:
-      return state;
-  }
-};
+export const initialState = [];
+
+export const getTodo = (state, { array }) => [...array];
+
+export const addTodo = (state, { id, text }) => [
+  {
+    id,
+    text,
+    completed: false,
+  },
+  ...state,
+];
+
+export const editTodo = (state, { id, updates }) => state.map(todo => (todo.id === id ? { ...todo, updates } : todo));
+
+export const removeTodo = (state, { id }) => state.filter(todo => todo.id !== id);
+
+export const toggleTodo = (state, { id }) => state.map(todo => (todo.id === id ? { ...todo, completed: !todo.completed } : todo));
+
+export default makeReducerCreator(initialState, {
+  [TodoTypes.GET_TODO_LIST]: getTodo,
+  [TodoTypes.ADD_TODO]: addTodo,
+  [TodoTypes.EDIT_TODO]: editTodo,
+  [TodoTypes.REMOVE_TODO]: removeTodo,
+  [TodoTypes.TOGGLE_TODO]: toggleTodo,
+});

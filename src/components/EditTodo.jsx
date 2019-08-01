@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 export default function EditTodo({ completed, text, onSave }) {
-  let [value, setValue] = useState(text);
-  let [isEdit, setEdit] = useState(false);
+  const [value, setValue] = useState(text);
+  const [isEdit, setEdit] = useState(false);
   function handleSubmit(e) {
     const text = e.target.value.trim();
     if (e.which === 13) {
@@ -23,7 +23,7 @@ export default function EditTodo({ completed, text, onSave }) {
       {!isEdit ? (
         <p
           style={{
-            textDecoration: completed ? "line-through" : "none"
+            textDecoration: completed ? 'line-through' : 'none',
           }}
           onDoubleClick={() => setEdit(true)}
         >
@@ -32,7 +32,7 @@ export default function EditTodo({ completed, text, onSave }) {
       ) : (
         <input
           type="text"
-          autoFocus={true}
+          autoFocus
           value={value}
           onKeyDown={handleSubmit}
           onBlur={e => handleSubmitBlur(e)}

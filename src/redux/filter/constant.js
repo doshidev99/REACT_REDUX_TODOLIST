@@ -1,1 +1,0 @@
-export const FILTER = "SET_VISIBILITY_FILTER";

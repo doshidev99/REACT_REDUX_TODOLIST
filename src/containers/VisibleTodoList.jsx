@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { toggleTodo, removeTodo, editTodo } from '../redux/todos/action';
+import {
+  toggleTodoAction,
+  removeTodoAction,
+  editTodoAction,
+} from '../redux/todos/actions';
 import TodoList from '../components/TodoList';
 
 const getVisibleTodos = (todos, filter) => {
@@ -20,8 +24,8 @@ export default connect(
     todos: getVisibleTodos(state.todos, state.visibilityFilter),
   }),
   dispatch => ({
-    toggleTodo: id => dispatch(toggleTodo(id)),
-    removeTodo: id => dispatch(removeTodo(id)),
-    editTodo: (id, updates) => dispatch(editTodo(id, updates)),
+    toggleTodo: id => dispatch(toggleTodoAction(id)),
+    removeTodo: id => dispatch(removeTodoAction(id)),
+    editTodo: (id, updates) => dispatch(editTodoAction(id, updates)),
   }),
 )(TodoList);
