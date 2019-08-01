@@ -11,6 +11,7 @@
     "react-scripts": "3.0.1",
     "redux": "4.0.1",
     "redux-devtools-extension": "^2.13.8",
+    "reselect": "^4.0.0",
     "styled-components": "4.3.1"
   },
   "scripts": {
@@ -18,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/.bin/eslint -c .eslintrc --fix ./"
+    "lint": "./node_modules/.bin/eslint -c .eslintrc ./src"
   },
   "eslintConfig": {
     "extends": "react-app"
