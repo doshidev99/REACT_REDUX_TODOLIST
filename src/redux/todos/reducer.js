@@ -14,11 +14,16 @@ export const addTodo = (state, { id, text }) => [
   ...state,
 ];
 
-export const editTodo = (state, { id, updates }) => state.map(todo => (todo.id === id ? { ...todo, updates } : todo));
+export const editTodo = (state, { id, updates }) =>
+  state.map(todo => (todo.id === id ? { ...todo, updates } : todo));
 
-export const removeTodo = (state, { id }) => state.filter(todo => todo.id !== id);
+export const removeTodo = (state, { id }) =>
+  state.filter(todo => todo.id !== id);
 
-export const toggleTodo = (state, { id }) => state.map(todo => (todo.id === id ? { ...todo, completed: !todo.completed } : todo));
+export const toggleTodo = (state, { id }) =>
+  state.map(todo =>
+    todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+  );
 
 export default makeReducerCreator(initialState, {
   [TodoTypes.GET_TODO_LIST]: getTodo,
