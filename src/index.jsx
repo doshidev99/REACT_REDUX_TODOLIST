@@ -21,7 +21,6 @@ const App = () => {
   }, []);
   return (
     <Wrapper>
-      <h1 className="title"> Hello </h1>
       <Menu />
     </Wrapper>
   );
@@ -31,5 +30,5 @@ render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );

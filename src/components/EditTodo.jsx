@@ -4,16 +4,16 @@ export default function EditTodo({ completed, text, onSave }) {
   const [value, setValue] = useState(text);
   const [isEdit, setEdit] = useState(false);
   function handleSubmit(e) {
-    const text = e.target.value.trim();
+    const newText = e.target.value.trim();
     if (e.which === 13) {
       setEdit(false);
-      onSave(text);
+      onSave(newText);
     }
   }
   function handleValueChange(e) {
     setValue(e.target.value);
   }
-  const handleSubmitBlur = e => {
+  const handleSubmitBlur = () => {
     setEdit(false);
     onSave(text);
   };
@@ -23,7 +23,7 @@ export default function EditTodo({ completed, text, onSave }) {
       {!isEdit ? (
         <p
           style={{
-            textDecoration: completed ? 'line-through' : 'none',
+            textDecoration: completed ? 'line-through' : 'none'
           }}
           onDoubleClick={() => setEdit(true)}
         >
@@ -35,7 +35,7 @@ export default function EditTodo({ completed, text, onSave }) {
           autoFocus
           value={value}
           onKeyDown={handleSubmit}
-          onBlur={e => handleSubmitBlur(e)}
+          onBlur={handleSubmitBlur}
           onChange={handleValueChange}
         />
       )}

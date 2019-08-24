@@ -1,9 +1,12 @@
-import { createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from './rootReducers';
+import { configureStore } from 'redux-starter-kit';
+import reducer from './rootReducers';
 
 const enhancers = [];
 
-const store = createStore(rootReducer, composeWithDevTools(...enhancers));
+const store = configureStore({
+  reducer,
+  devTools: process.env.NODE_ENV !== 'production',
+  enhancers
+});
 
 export default store;

@@ -1,19 +1,10 @@
-import { makeConstantCreator, makeActionCreator } from '../../utils/reduxUtils';
+import { createAction } from 'redux-starter-kit';
 
-export const TodoTypes = makeConstantCreator(
-  'GET_TODO_LIST',
-  'ADD_TODO',
-  'REMOVE_TODO',
-  'EDIT_TODO',
-  'TOGGLE_TODO',
-);
+export const toggleTodoAction = createAction('TOGGLE_TODO');
 
-export const toggleTodoAction = id => makeActionCreator(TodoTypes.TOGGLE_TODO, { id });
+export const getTodoListAction = createAction('GET_TODO_LIST');
+export const addTodoAction = createAction('ADD_TODO');
 
-export const getTodoListAction = array => makeActionCreator(TodoTypes.GET_TODO_LIST, { array });
+export const removeTodoAction = createAction('REMOVE_TODO');
 
-export const addTodoAction = text => makeActionCreator(TodoTypes.ADD_TODO, { id: Date.now(), text });
-
-export const removeTodoAction = id => makeActionCreator(TodoTypes.REMOVE_TODO, { id });
-
-export const editTodoAction = (id, updates) => makeActionCreator(TodoTypes.EDIT_TODO, { id, updates });
+export const editTodoAction = createAction('EDIT_TODO');

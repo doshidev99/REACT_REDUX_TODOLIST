@@ -1,7 +1,4 @@
-import { makeConstantCreator, makeActionCreator } from '../../utils/reduxUtils';
+import { createAction } from 'redux-starter-kit';
 
-export const FilterTypes = makeConstantCreator('SET_VISIBILITY_FILTER');
-
-export const setVisibilityFilter = filter => makeActionCreator(FilterTypes.SET_VISIBILITY_FILTER, {
-  filter,
-});
+// eslint-disable-next-line import/prefer-default-export
+export const setVisibilityFilterAction = createAction('SET_VISIBILITY_FILTER');

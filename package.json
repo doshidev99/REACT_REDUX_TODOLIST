@@ -5,12 +5,12 @@
   "keywords": [],
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-redux": "7.0.3",
-    "react-scripts": "3.0.1",
-    "redux": "4.0.1",
-    "redux-devtools-extension": "^2.13.8",
+    "react-scripts": "^3.1.1",
+    "redux": "^4.0.4",
+    "redux-starter-kit": "^0.6.3",
     "reselect": "^4.0.0",
     "styled-components": "4.3.1"
   },
@@ -19,7 +19,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/.bin/eslint -c .eslintrc ./src"
+    "lint": "./node_modules/.bin/eslint ./src",
+    "build:fab": "npm run build && npm run fab:compile",
+    "fab:compile": "fab-static build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,11 +33,18 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@fab/static": "^0.1.8",
+    "babel-eslint": "^10.0.2",
     "babel-plugin-import": "^1.11.0",
-    "eslint-config-airbnb": "^17.1.1",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^3.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "react-app-rewire-less": "^2.1.3",
     "react-app-rewired": "^1.6.2",
     "stylelint": "^10.1.0",

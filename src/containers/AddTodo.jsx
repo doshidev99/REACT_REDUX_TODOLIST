@@ -21,9 +21,9 @@ const AddTodo = ({ getTodoList, addTodo }) => {
         {
           id: Date.now(),
           text: input.current.value,
-          completed: false,
+          completed: false
         },
-        ...array,
+        ...array
       ];
       localStorage.setItem('todos', JSON.stringify(array));
       addTodo(input.current.value);
@@ -42,7 +42,7 @@ const AddTodo = ({ getTodoList, addTodo }) => {
 
 AddTodo.propTypes = {
   getTodoList: PropTypes.func.isRequired,
-  addTodo: PropTypes.func.isRequired,
+  addTodo: PropTypes.func.isRequired
 };
 
 export default connect(
@@ -53,6 +53,6 @@ export default connect(
     },
     getTodoList: array => {
       dispatch(getTodoListAction(array));
-    },
-  }),
+    }
+  })
 )(AddTodo);

@@ -1,34 +1,38 @@
-import { TodoTypes } from './actions';
-import { makeReducerCreator } from '../../utils/reduxUtils';
+import { createReducer } from 'redux-starter-kit';
+import {
+  toggleTodoAction,
+  addTodoAction,
+  getTodoListAction,
+  removeTodoAction,
+  editTodoAction
+} from './actions';
 
 export const initialState = [];
 
-export const getTodo = (state, { array }) => [...array];
-
-export const addTodo = (state, { id, text }) => [
+export const getTodo = (state, { payload }) => [...payload];
+export const addTodo = (state, { payload }) => [
   {
-    id,
-    text,
-    completed: false,
+    id: Date.now(),
+    text: payload,
+    completed: false
   },
-  ...state,
+  ...state
 ];
 
-export const editTodo = (state, { id, updates }) =>
+export const editTodo = (state, { payload: { id, updates } }) =>
   state.map(todo => (todo.id === id ? { ...todo, updates } : todo));
+export const removeTodo = (state, { payload }) =>
+  state.filter(todo => todo.id !== payload);
 
-export const removeTodo = (state, { id }) =>
-  state.filter(todo => todo.id !== id);
-
-export const toggleTodo = (state, { id }) =>
+export const toggleTodo = (state, { payload }) =>
   state.map(todo =>
-    todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+    todo.id === payload ? { ...todo, completed: !todo.completed } : todo
   );
 
-export default makeReducerCreator(initialState, {
-  [TodoTypes.GET_TODO_LIST]: getTodo,
-  [TodoTypes.ADD_TODO]: addTodo,
-  [TodoTypes.EDIT_TODO]: editTodo,
-  [TodoTypes.REMOVE_TODO]: removeTodo,
-  [TodoTypes.TOGGLE_TODO]: toggleTodo,
+export default createReducer(initialState, {
+  [getTodoListAction.type]: getTodo,
+  [addTodoAction.type]: addTodo,
+  [editTodoAction.type]: editTodo,
+  [removeTodoAction.type]: removeTodo,
+  [toggleTodoAction.type]: toggleTodo
 });
