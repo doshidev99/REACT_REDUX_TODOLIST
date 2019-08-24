@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function EditTodo({ completed, text, onSave }) {
+const EditTodo = ({ completed, text, onSave }) => {
   const [value, setValue] = useState(text);
   const [isEdit, setEdit] = useState(false);
-  function handleSubmit(e) {
+  const handleSubmit = e => {
     const newText = e.target.value.trim();
     if (e.which === 13) {
       setEdit(false);
       onSave(newText);
     }
-  }
-  function handleValueChange(e) {
+  };
+  const handleValueChange = e => {
     setValue(e.target.value);
-  }
+  };
   const handleSubmitBlur = () => {
     setEdit(false);
     onSave(text);
@@ -32,7 +33,6 @@ export default function EditTodo({ completed, text, onSave }) {
       ) : (
         <input
           type="text"
-          autoFocus
           value={value}
           onKeyDown={handleSubmit}
           onBlur={handleSubmitBlur}
@@ -41,4 +41,12 @@ export default function EditTodo({ completed, text, onSave }) {
       )}
     </div>
   );
-}
+};
+
+EditTodo.propTypes = {
+  completed: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired,
+  onSave: PropTypes.func.isRequired
+};
+
+export default EditTodo;

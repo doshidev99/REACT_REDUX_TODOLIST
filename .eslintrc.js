@@ -1,22 +1,37 @@
 module.exports = {
+  extends: ['airbnb', 'prettier'],
+  plugins: ['jsx-a11y', 'react-hooks', 'prettier', 'jest'],
+  settings: {
+    react: {
+      createClass: 'createReactClass',
+      pragma: 'React',
+      version: 'detect'
+    }
+  },
+  settings: {
+    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx']
+    },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      }
+    }
+  },
   env: {
     browser: true,
-    es6: true
-  },
-  extends: ['airbnb', 'prettier', 'prettier/react'],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    jest: true
   },
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    },
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  plugins: ['react', 'jsx-a11y', 'react-hooks', 'prettier'],
   rules: {
-    'react/jsx-fragments': [1, 'element']
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
+    'react/jsx-fragments': [1, 'element'],
+    'react/jsx-props-no-spreading': 0
   }
 };
