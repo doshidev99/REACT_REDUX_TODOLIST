@@ -1,24 +1,6 @@
 module.exports = {
   extends: ['airbnb', 'prettier'],
-  plugins: ['jsx-a11y', 'react-hooks', 'prettier', 'jest'],
-  settings: {
-    react: {
-      createClass: 'createReactClass',
-      pragma: 'React',
-      version: 'detect'
-    }
-  },
-  settings: {
-    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx']
-    },
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
-      }
-    }
-  },
+  plugins: ['react', 'jsx-a11y', 'react-hooks', 'prettier', 'jest'],
   env: {
     browser: true,
     jest: true
