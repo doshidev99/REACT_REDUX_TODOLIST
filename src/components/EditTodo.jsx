@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useInput } from '../hooks';
 
 const EditTodo = ({ completed, text, onSave }) => {
-  const [value, setValue] = useState(text);
+  const { value, onChange } = useInput(text);
   const [isEdit, setEdit] = useState(false);
   const handleSubmit = e => {
     const newText = e.target.value.trim();
@@ -10,9 +11,6 @@ const EditTodo = ({ completed, text, onSave }) => {
       setEdit(false);
       onSave(newText);
     }
-  };
-  const handleValueChange = e => {
-    setValue(e.target.value);
   };
   const handleSubmitBlur = () => {
     setEdit(false);
@@ -36,7 +34,7 @@ const EditTodo = ({ completed, text, onSave }) => {
           value={value}
           onKeyDown={handleSubmit}
           onBlur={handleSubmitBlur}
-          onChange={handleValueChange}
+          onChange={onChange}
         />
       )}
     </div>
