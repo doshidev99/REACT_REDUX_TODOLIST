@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useInput } from '../hooks';
+import { useInput } from '../../hooks';
 
 const EditTodo = ({ completed, text, onSave }) => {
   const { value, onChange } = useInput(text);
@@ -42,9 +42,15 @@ const EditTodo = ({ completed, text, onSave }) => {
 };
 
 EditTodo.propTypes = {
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired,
-  onSave: PropTypes.func.isRequired
+  completed: PropTypes.bool,
+  text: PropTypes.string,
+  onSave: PropTypes.func
+};
+
+EditTodo.defaultProps = {
+  completed: false,
+  text: '',
+  onSave: () => {}
 };
 
 export default EditTodo;

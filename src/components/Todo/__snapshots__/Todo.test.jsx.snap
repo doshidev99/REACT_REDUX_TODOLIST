@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo should render correctly in "debug" mode 1`] = `
+<li>
+  <img
+    alt="todos"
+    onClick={[Function]}
+    role="presentation"
+    src="check.png"
+  />
+  <EditTodo
+    completed={false}
+    onSave={[Function]}
+    text=""
+  />
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Remove
+  </button>
+</li>
+`;

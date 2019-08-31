@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link should render correctly in "debug" mode 1`] = `
+<button
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+/>
+`;

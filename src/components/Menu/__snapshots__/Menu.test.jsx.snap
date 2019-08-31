@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu should render correctly in "debug" mode 1`] = `
+<Fragment>
+  Hello
+  <Connect(AddTodo) />
+  <Connect(TodoList) />
+  <_default />
+</Fragment>
+`;

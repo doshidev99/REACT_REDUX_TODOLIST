@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import check from '../assets/images/check.png';
-import checked from '../assets/images/checked.png';
-import EditTodo from './EditTodo';
+import check from '../../assets/images/check.png';
+import checked from '../../assets/images/checked.png';
+import EditTodo from '../EditTodo';
 
 const Todo = ({ toggleId, completed, text, removeId, onSave }) => (
   <li>
@@ -20,11 +20,19 @@ const Todo = ({ toggleId, completed, text, removeId, onSave }) => (
 );
 
 Todo.propTypes = {
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired,
-  toggleId: PropTypes.func.isRequired,
-  removeId: PropTypes.func.isRequired,
-  onSave: PropTypes.func.isRequired,
+  completed: PropTypes.bool,
+  text: PropTypes.string,
+  toggleId: PropTypes.func,
+  removeId: PropTypes.func,
+  onSave: PropTypes.func
+};
+
+Todo.defaultProps = {
+  completed: false,
+  text: '',
+  toggleId: () => {},
+  removeId: () => {},
+  onSave: () => {}
 };
 
 export default Todo;

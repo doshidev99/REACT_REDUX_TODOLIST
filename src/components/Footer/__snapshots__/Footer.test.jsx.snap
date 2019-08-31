@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render correctly in "debug" mode 1`] = `
+<Fragment>
+  <Connect(Link)
+    filter="SHOW_ALL"
+  >
+    All
+  </Connect(Link)>
+  <Connect(Link)
+    filter="SHOW_ACTIVE"
+  >
+    Active
+  </Connect(Link)>
+  <Connect(Link)
+    filter="SHOW_COMPLETED"
+  >
+    Completed
+  </Connect(Link)>
+</Fragment>
+`;

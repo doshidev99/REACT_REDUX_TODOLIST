@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Todo from './Todo';
+import Todo from '../Todo';
 
 const TodoList = ({ todos, toggleTodo, removeTodo, editTodo }) => (
   <ul>
@@ -31,16 +31,23 @@ const TodoList = ({ todos, toggleTodo, removeTodo, editTodo }) => (
 );
 
 TodoList.propTypes = {
-  editTodo: PropTypes.func.isRequired,
-  removeTodo: PropTypes.func.isRequired,
+  editTodo: PropTypes.func,
+  removeTodo: PropTypes.func,
   todos: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       completed: PropTypes.bool.isRequired,
       text: PropTypes.string.isRequired
     }).isRequired
-  ).isRequired,
-  toggleTodo: PropTypes.func.isRequired
+  ),
+  toggleTodo: PropTypes.func
+};
+
+TodoList.defaultProps = {
+  editTodo: () => {},
+  removeTodo: () => {},
+  todos: [],
+  toggleTodo: () => {}
 };
 
 export default TodoList;

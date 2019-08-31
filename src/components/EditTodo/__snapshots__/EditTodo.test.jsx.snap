@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditTodo should render correctly in "debug" mode 1`] = `
+<div>
+  <p
+    onDoubleClick={[Function]}
+    style={
+      Object {
+        "textDecoration": "none",
+      }
+    }
+  />
+</div>
+`;

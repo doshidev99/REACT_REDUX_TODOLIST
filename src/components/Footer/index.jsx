@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import FilterLink from '../containers/FilterLink';
+import FilterLink from '../../containers/FilterLink';
 
 export default () => (
   <Fragment>
