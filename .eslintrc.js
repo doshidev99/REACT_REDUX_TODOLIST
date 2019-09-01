@@ -10,6 +10,16 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        tabWidth: 2,
+        printWidth: 80,
+        bracketSpacing: true,
+        semi: true
+      }
+    ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],

@@ -16,5 +16,5 @@ export default createSelector(
       default:
         return '';
     }
-  },
+  }
 );
