@@ -1,10 +1,11 @@
-import React, { useEffect, createRef } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addTodoAction, getTodoListAction } from '../redux/todos/actions';
+import { useInput } from '../hooks';
 
 const AddTodo = ({ getTodoList, addTodo }) => {
-  const input = createRef('null');
+  const { value, setValue, onChange } = useInput('');
   useEffect(() => {
     if (!localStorage.getItem('todos')) {
       localStorage.setItem('todos', JSON.stringify([]));
@@ -15,25 +16,25 @@ const AddTodo = ({ getTodoList, addTodo }) => {
   });
   const handleSubmit = e => {
     e.preventDefault();
-    if (input.current.value.trim()) {
+    if (value.trim()) {
       let array = JSON.parse(localStorage.getItem('todos'));
       array = [
         {
           id: Date.now(),
-          text: input.current.value,
+          text: value,
           completed: false
         },
         ...array
       ];
       localStorage.setItem('todos', JSON.stringify(array));
-      addTodo(input.current.value);
-      input.current.value = '';
+      addTodo(value);
+      setValue('');
     }
   };
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input ref={input} />
+        <input value={value} onChange={onChange} />
         <button type="submit">Add Todo</button>
       </form>
     </div>

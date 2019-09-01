@@ -4,16 +4,19 @@ exports[`Footer should render correctly in "debug" mode 1`] = `
 <Fragment>
   <Connect(Link)
     filter="SHOW_ALL"
+    href="todo"
   >
     All
   </Connect(Link)>
   <Connect(Link)
     filter="SHOW_ACTIVE"
+    href="todo"
   >
     Active
   </Connect(Link)>
   <Connect(Link)
     filter="SHOW_COMPLETED"
+    href="todo"
   >
     Completed
   </Connect(Link)>

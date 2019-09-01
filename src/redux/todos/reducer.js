@@ -20,7 +20,7 @@ export const addTodo = (state, { payload }) => [
 ];
 
 export const editTodo = (state, { payload: { id, updates } }) =>
-  state.map(todo => (todo.id === id ? { ...todo, updates } : todo));
+  state.map(todo => (todo.id === id ? { ...todo, text: updates } : todo));
 export const removeTodo = (state, { payload }) =>
   state.filter(todo => todo.id !== payload);
 

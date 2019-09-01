@@ -5,5 +5,7 @@ exports[`Link should render correctly in "debug" mode 1`] = `
   disabled={false}
   onClick={[Function]}
   type="button"
-/>
+>
+  All
+</button>
 `;

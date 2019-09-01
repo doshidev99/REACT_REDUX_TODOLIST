@@ -9,13 +9,13 @@ const Link = ({ active, children, onClick }) => (
 
 Link.propTypes = {
   active: PropTypes.bool,
-  children: PropTypes.element,
+  children: PropTypes.string,
   onClick: PropTypes.func
 };
 
 Link.defaultProps = {
   active: false,
-  children: null,
+  children: 'All',
   onClick: () => {}
 };
 
