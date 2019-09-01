@@ -10,11 +10,9 @@ const App = () => {
     const ele = document.getElementById('ipl-progress-indicator');
     if (ele) {
       setTimeout(() => {
-        // fade out
         ele.classList.add('available');
       }, 500);
       setTimeout(() => {
-        // remove from DOM
         ele.outerHTML = '';
       }, 1500);
     }
