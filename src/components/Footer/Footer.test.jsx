@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Footer from './index';
+import Footer from './Footer';
 
 describe('Footer', () => {
   it('should render correctly in "debug" mode', () => {

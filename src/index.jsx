@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import Wrapper from './style';
 import Menu from './components/Menu';
+import MenuToggle from './components/MenuToggle';
 
 const App = () => {
   useEffect(() => {
@@ -19,6 +20,7 @@ const App = () => {
   }, []);
   return (
     <Wrapper>
+      <MenuToggle />
       <Menu />
     </Wrapper>
   );

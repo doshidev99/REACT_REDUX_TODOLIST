@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import EditTodo from './index';
+import EditTodo from './EditTodo';
 
 describe('EditTodo', () => {
   it('should render correctly in "debug" mode', () => {
