@@ -7,6 +7,7 @@ const MenuToggle = () => {
   const [iconStatus, setIconStatus] = useState('default');
 
   const toggle = () => {
+    // eslint-disable-next-line no-unused-expressions
     iconStatus === 'default' ? setIconStatus('open') : setIconStatus('default');
   };
 

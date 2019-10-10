@@ -22,7 +22,7 @@ const EditTodo = ({ completed, text, onSave }) => {
       {!isEdit ? (
         <p
           style={{
-            textDecoration: completed ? 'line-through' : 'none',
+            textDecoration: completed ? 'line-through' : 'none'
           }}
           onDoubleClick={() => setEdit(true)}
         >
@@ -44,13 +44,13 @@ const EditTodo = ({ completed, text, onSave }) => {
 EditTodo.propTypes = {
   completed: PropTypes.bool,
   text: PropTypes.string,
-  onSave: PropTypes.func,
+  onSave: PropTypes.func
 };
 
 EditTodo.defaultProps = {
   completed: false,
   text: '',
-  onSave: () => {},
+  onSave: () => {}
 };
 
 export default EditTodo;

@@ -4,7 +4,7 @@ import Todo from '../Todo';
 
 const TodoList = ({ todos, toggleTodo, removeTodo, editTodo }) => (
   <ul>
-    {todos.map((todo, index) => {
+    {todos?.map((todo, index) => {
       const { text, completed } = todo;
       return (
         <Todo

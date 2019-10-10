@@ -6,15 +6,16 @@ module.exports = {
     'react-hooks',
     'prettier',
     'jest',
-    'eslint-comments',
+    'eslint-comments'
   ],
   env: {
     browser: true,
-    jest: true,
+    jest: true
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   rules: {
     'prettier/prettier': [
@@ -24,8 +25,8 @@ module.exports = {
         tabWidth: 2,
         printWidth: 80,
         bracketSpacing: true,
-        semi: true,
-      },
+        semi: true
+      }
     ],
     // 'react/jsx-curly-newline': [
     //   1,
@@ -42,6 +43,6 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
     'react/jsx-fragments': [1, 'element'],
-    'react/jsx-props-no-spreading': 0,
-  },
+    'react/jsx-props-no-spreading': 0
+  }
 };

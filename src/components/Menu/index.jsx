@@ -2,14 +2,17 @@ import React, { Fragment } from 'react';
 import AddTodo from '../../containers/AddTodo';
 import VisibleTodoList from '../../containers/VisibleTodoList';
 import Footer from '../Footer';
+import Header from '../Header';
 
-const Menu = () => (
-  <Fragment>
-    Hello
-    <AddTodo />
-    <VisibleTodoList />
-    <Footer />
-  </Fragment>
-);
+const Menu = () => {
+  return (
+    <Fragment>
+      <Header />
+      <AddTodo />
+      <VisibleTodoList />
+      <Footer />
+    </Fragment>
+  );
+};
 
 export default Menu;

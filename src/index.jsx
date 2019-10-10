@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import Wrapper from './style';
 import Menu from './components/Menu';
 import MenuToggle from './components/MenuToggle';
 
@@ -19,10 +18,10 @@ const App = () => {
     }
   }, []);
   return (
-    <Wrapper>
+    <React.Fragment>
       <MenuToggle />
       <Menu />
-    </Wrapper>
+    </React.Fragment>
   );
 };
 

@@ -2,7 +2,7 @@
 
 exports[`Menu should render correctly in "debug" mode 1`] = `
 <Fragment>
-  Hello
+  <Header />
   <Connect(AddTodo) />
   <Connect(TodoList) />
   <_default />
